@@ -48,3 +48,31 @@ ScrollReveal().reveal(
 );
 ScrollReveal().reveal(".home-content h1, .about-img", { orign: "left" });
 ScrollReveal().reveal(".home-content p, .about-content", { orign: "right" });
+
+//
+
+let MyForm = document.querySelector(".myform");
+let ElName = document.getElementById("name");
+let ElEmail = document.getElementById("email");
+let ElMessage = document.getElementById("message");
+
+MyForm.addEventListener("submit", (evt) => {
+  evt.preventDefault();
+
+  let params = {
+    name: ElName.value,
+    email: ElEmail.value,
+    message: ElMessage.value,
+  };
+  emailjs.send("service_pevaq6p", "template_9jzraa3", params).then((res) => {
+    swal("Success!", " Send your message!", "success");
+  }).catch((err) => alert(err),
+ 
+  );
+
+  ElMessage.value = "";
+  ElEmail.value = "";
+  ElName.value = "";
+
+ 
+});
