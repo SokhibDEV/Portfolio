@@ -71,8 +71,10 @@ section {
   display: none;
 }
 .home-img img {
-  width: 500px;
-  object-fit: fill;
+  width: 400px;
+height: 400px;
+border-radius: 20px;
+  object-fit: cover;
 }
 
 .home {
@@ -165,6 +167,7 @@ span {
 }
 .about-img img {
   width: 35vw;
+  border-radius: 20px;
 }
 .heading {
   text-align: center;
